@@ -3,5 +3,11 @@
     ViewBag.Title = "Services";
 }
 
-<h2>Services</h2>
+<h2>Provided Services</h2>
+
+@foreach (var item in Model)
+{
+     <p>@item.Name</p><br />
+     <p>@item.Description</p><br />
+}
 

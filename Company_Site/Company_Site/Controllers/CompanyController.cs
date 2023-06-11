@@ -20,7 +20,28 @@ namespace Company_Site.Controllers
 
         public ActionResult Services()
         {
-            return View();
+            var tem1 = new Services
+            {
+                Name = "Smartphone",
+                Description = "MediaTek’s smartphone chipsets are designed to deliver the latest features and advanced technology to the mass market. MediaTek’s smartphone chipsets are designed to deliver the latest features and advanced technology to the mass market. MediaTek’s smartphone chipsets are designed to deliver the latest features and advanced technology to the mass market."
+            };
+            var tem2 = new Services
+            {
+                Name = "Tablet",
+                Description = "MediaTek’s tablet chipsets are designed to deliver the latest features and advanced technology to the mass market. MediaTek’s tablet chipsets are designed to deliver the latest features and advanced technology to the mass market. MediaTek’s tablet chipsets are designed to deliver the latest features and advanced technology to the mass market."
+            };
+            var tem3 = new Services
+            {
+                Name = "Smart TV",
+                Description = "MediaTek’s smart TV chipsets are designed to deliver the latest features and advanced technology to the mass market. MediaTek’s smart TV chipsets are designed to deliver the latest features and advanced technology to the mass market. MediaTek’s smart TV chipsets are designed to deliver the latest features and advanced technology to the mass market."
+            };
+            var tem4 = new Services
+            {
+                Name = "Automotive",
+                Description = "MediaTek’s automotive chipsets are designed to deliver the latest features and advanced technology to the mass market. MediaTek’s automotive chipsets are designed to deliver the latest features and advanced technology to the mass market. MediaTek’s automotive chipsets are designed to deliver the latest features and advanced technology to the mass market."
+            };
+            Services[] services = new Services[] { tem1, tem2, tem3, tem4 };
+            return View(services);
         }
 
         public ActionResult Team()

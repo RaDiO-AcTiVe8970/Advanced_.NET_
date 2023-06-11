@@ -7,6 +7,7 @@ namespace Company_Site.Models
 {
     public class Services
     {
-        
+        public string Name { get; set; }
+        public string Description { get; set; }
     }
 }
