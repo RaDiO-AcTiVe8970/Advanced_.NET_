@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Team";
+}
+
+<h2>Team Members</h2>
+<div>
+    <table class="table table-hover">
+        <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Department</th>
+            <th>Bio</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Position</td>
+                <td>@item.Department</td>
+                <td>@item.Bio</td>
+            </tr>
+        }
+    </table>
+</div>
+

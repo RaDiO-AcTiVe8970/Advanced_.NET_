@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<main>
+    <div >
+         <h1 class="card-title" id="title">Welcome to MediaTek IT Solutions<br /><br /></h1> 
+    </div>
+    
+
+    <div class="row">
+        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
+            <h2 id="gettingStartedTitle">Bio</h2>
+            <p>
+                @ViewBag.Bio
+            </p>
+            <p><a class="btn btn-outline-dark" href="/Company/Index">Learn more &raquo;</a></p>
+        </section>
+        <section class="col-md-4" aria-labelledby="librariesTitle">
+            <h2 id="librariesTitle">Services</h2>
+            <p>@ViewBag.Services</p>
+            <p><a class="btn btn-outline-dark" href="/Company/Services">Learn more &raquo;</a></p>
+        </section>
+        <section class="col-md-4" aria-labelledby="hostingTitle">
+            <h2 id="hostingTitle">Teams & Members</h2>
+            <p>@ViewBag.Mission</p>
+            <p><a class="btn btn-outline-dark" href="/Company/Team">Learn more &raquo;</a></p>
+        </section>
+    </div>
+</main>
+
