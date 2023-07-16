@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Resgistration";
+}
+
+@{ 
+    bool checkProfession(string prof)
+    {
+        if(Model != null && Model.profession !=null)
+        {
+            foreach (var proff in Model.profession)
+            {
+                if(proff.Equals(prof))
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    bool checkGender(string gen)
+    {
+        if (Model != null && Model.gender != null && Model.gender.Equals(gen))
+        {
+            return true;
+        }
+        return false;
+    }
+}
+<h2>Resgistration</h2>
+<div class="jumbotron">
+    <form method="post">
+        Name:<input type="text" name="name" class="form-control" value="@(Model !=null ? Model.name :"")" placeholder="Enter Name" /><br />
+        <span class="text-danger">@Html.ValidationMessage("name")</span><br />
+        Username:<input type="text" name="username" class="form-control" value="@(Model !=null ? Model.username :"")" placeholder="Enter Username" /><br />
+        <span class="text-danger">@Html.ValidationMessage("username")</span><br />
+        Gender:<br /><input type="radio" checked="@(checkGender("Male"))" name="gender" value="Male" /> Male
+        <input type="radio" checked="@(checkGender("Female"))" name="gender" value="Female" /> Female<br /><br />
+        <span class="text-danger">@Html.ValidationMessage("gender")</span><br />
+        Profession:<br />
+        <input type="checkbox" checked="@checkProfession("Engineer")" name="profession[]" value="Engineer" />Engineer<br />
+        <input type="checkbox" checked="@checkProfession("Software Developer")" name="profession[]" value="Software Developer" />Software Developer<br />
+        <input type="checkbox" checked="@checkProfession("Web Developer(Backend)")" name="profession[]" value="Web Developer(Backend)" />Web Developer(Backend)<br />
+        <input type="checkbox" checked="@checkProfession("Web Developer(Frontend)")" name="profession[]" value="Web Developer(Frontend)" />Web Developer(Frontend)<br />
+        <input type="checkbox" checked="@checkProfession("Web Developer(Full stack)")" name="profession[]" value="Web Developer(Full stack)" />Web Developer(Full stack)
+
+        <br /><span class="text-danger">@Html.ValidationMessage("profession")</span><br /><br />
+        Date of Birth:
+        <input type="date" class="form-control" name="dob" value="@(Model != null ? Model.dob.Date.ToString("yyyy-MM-dd") : "")" />
+        <span class="text-danger">@Html.ValidationMessage("dob")</span><br />
+        <br />
+        Student ID:
+        <input type="text" class="form-control" name="stdid" value="@(Model != null ? Model.stdid : "")" placeholder="Enter Student ID" />
+        <span class="text-danger">@Html.ValidationMessage("stdid")</span>
+        <br />
+        Email:
+        <input type="text" class="form-control" name="email" value="@(Model != null ? Model.email : "")" placeholder="Enter Email" />
+        <span class="text-danger">@Html.ValidationMessage("email")</span><br />
+        <input type="submit" class="btn btn-success" />
+    </form>
+</div>
+
