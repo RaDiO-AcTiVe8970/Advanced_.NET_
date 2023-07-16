@@ -1,0 +1,37 @@
+﻿@Model List<RequestDTO>
+@{
+    ViewBag.Title = "ViewRequest";
+}
+
+<div class="container">
+    <h2>View Request</h2>
+
+    @if (Model.Count == 0)
+    {
+        <p>No Request found.</p>
+    }
+    else
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Request ID</th>
+                    <th>Collection Assigned Request</th>
+                    <th>Staus</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var req in Model)
+                {
+                    <tr>
+                        <td>@req.ReqID</td>
+                        <td>@req.AssID</td>
+                        <td>@req.Status</td>
+                        <td><a href="/Request/DeleteRequest/@req.ReqID" class="btn btn-success">Delete Request</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
+

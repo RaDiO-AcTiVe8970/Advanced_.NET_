@@ -1,0 +1,38 @@
+﻿@Model List<EmployeeDTO>
+
+@{
+    ViewBag.Title = "ViewEmployee";
+}
+
+<div class="container">
+    <h2>View Employee</h2>
+
+    @if (Model.Count == 0)
+    {
+        <p>No employees found.</p>
+    }
+    else
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Name</th>
+                    <th>Contact Info</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var employee in Model)
+                {
+                    <tr>
+                        <td>@employee.EmpID</td>
+                        <td>@employee.EmpName</td>
+                        <td>@employee.Contact</td>
+                        <td><a href="/Employee/DeleteEmployee/@employee.EmpID" class="btn btn-success">Delete Employee</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
+
